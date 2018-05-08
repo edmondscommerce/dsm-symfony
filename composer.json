@@ -10,5 +10,10 @@
             "name": "Edmonds Commerce",
             "email": "info@edmondscommerce.co.uk"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "EdmondsCommerce\\DsmApiPlatformBundle": ["src/"]
+        }
+    }
 }

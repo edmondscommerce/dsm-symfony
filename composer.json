@@ -1,0 +1,14 @@
+{
+    "name": "edmondscommerce/dsm-api-platform",
+    "description": "A symfony bundle for DSM and API Platform",
+    "type": "library",
+    "require": {
+        "edmondscommerce/doctrine-static-meta": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "Edmonds Commerce",
+            "email": "info@edmondscommerce.co.uk"
+        }
+    ]
+}

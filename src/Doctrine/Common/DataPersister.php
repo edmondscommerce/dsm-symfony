@@ -38,7 +38,8 @@ class DataPersister implements DataPersisterInterface
      */
     public function persist($data): void
     {
-        if (!$manager = $this->getManager($data)) {
+        $manager = $this->getManager($data);
+        if ($manager === null) {
             return;
         }
 
@@ -52,7 +53,8 @@ class DataPersister implements DataPersisterInterface
      */
     public function remove($data): void
     {
-        if (!$manager = $this->getManager($data)) {
+        $manager = $this->getManager($data);
+        if ($manager === null) {
             return;
         }
 
@@ -82,12 +84,19 @@ class DataPersister implements DataPersisterInterface
      * Tries to get the real class name using the doctrine ClassUtils. If this is not possible return the result of
      * get_class
      *
-     * @param $object
+     * @param mixed $object
      *
      * @return string
+     *
+     * The only way to access this is using a static call
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     private function getObjectClass($object): string
     {
-        return class_exists(ClassUtils::class) ? ClassUtils::getClass($object) : \get_class($object);
+        if (class_exists(ClassUtils::class)) {
+            return ClassUtils::getRealClass($object);
+        }
+
+        return \get_class($object);
     }
 }

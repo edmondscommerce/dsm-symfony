@@ -3,7 +3,11 @@
     "description": "A symfony bundle for DSM and API Platform",
     "type": "library",
     "require": {
-        "edmondscommerce/doctrine-static-meta": "dev-api-platform@dev"
+        "edmondscommerce/doctrine-static-meta": "dev-api-platform@dev",
+        "api-platform/core": "^2.2"
+    },
+    "require-dev": {
+        "edmondscommerce/phpqa": "dev-master"
     },
     "authors": [
         {
@@ -15,5 +19,8 @@
         "psr-4": {
             "EdmondsCommerce\\DsmApiPlatformBundle\\": ["src/"]
         }
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }

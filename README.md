@@ -1,2 +1,3 @@
 # dsm-api-platform
-A symfony bundle for DSM and API Platform
+## By [Edmonds Commerce](https://www.edmondscommerce.co.uk)
+A symfony bundle that facilitates using [Doctrine Static Meta](https://github.com/edmondscommerce/doctrine-static-meta) with [API Platform](https://api-platform.com/)

@@ -7,7 +7,6 @@
 
 namespace EdmondsCommerce\DsmApiPlatformBundle\DependencyInjection;
 
-use EdmondsCommerce\DoctrineStaticMeta\Container;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
@@ -19,19 +18,18 @@ class DsmApiPlatformExtension extends Extension
     /**
      * Loads a specific configuration.
      *
-     * @throws \InvalidArgumentException When provided tag is not defined in this extension
+     * @param array            $configs
+     * @param ContainerBuilder $container
+     *
+     * The config array is required by the interface, but I have no need for it at the moment so
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $dsmContainer = new Container();
-
-
         $loader = new XmlFileLoader(
             $container,
-            new FileLocator(__DIR__.'/../Resources/config')
+            new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.xml');
-
-        $dsmContainer->addConfiguration($container, $_SERVER);
     }
 }

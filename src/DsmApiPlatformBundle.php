@@ -13,7 +13,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class DsmApiPlatformBundle extends Bundle
 {
-
     /**
      * @inheritdoc
      *

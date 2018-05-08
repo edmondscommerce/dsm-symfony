@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <defaults autowire="true" autoconfigure="true" public="false" />
+        <prototype namespace="EdmondsCommerce\DoctrineStaticMeta\" resource="../../../../doctrine-static-meta/src/*" />
+
+        <service id="dsm:code_generation_generate_relations" class="EdmondsCommerce\DoctrineStaticMeta\CodeGeneration\Command\GenerateRelationsCommand">
+            <tag name="console.command" command="dsm:generate:relations" />
+        </service>
+        <service id="dsm:code_generation_generate_entity" class="EdmondsCommerce\DoctrineStaticMeta\CodeGeneration\Command\GenerateEntityCommand">
+            <tag name="console.command" command="dsm:generate:entity" />
+        </service>
+        <service id="dsm:code_generation_generate_field" class="EdmondsCommerce\DoctrineStaticMeta\CodeGeneration\Command\GenerateFieldCommand">
+            <tag name="console.command" command="dsm:generate:field" />
+        </service>
+        <service id="dsm:code_generation_set_field" class="EdmondsCommerce\DoctrineStaticMeta\CodeGeneration\Command\SetFieldCommand">
+            <tag name="console.command" command="dsm:set:field" />
+        </service>
+        <service id="dsm:code_generation_set_relation" class="EdmondsCommerce\DoctrineStaticMeta\CodeGeneration\Command\SetRelationCommand">
+            <tag name="console.command" command="dsm:set:relation" />
+        </service>
+    </services>
+</container>

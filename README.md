@@ -42,3 +42,16 @@ You should now see the DSM commands when you run `./bin/console`:
   dsm:set:relation 
 # ...
 ```
+
+### Regenerating Entities in Existing Project
+
+In order to avoid autowiring issues it is advised that you comment out any services in `config/services.yaml`
+that reference your project code. For example:
+
+```yaml
+#    # makes classes in src/ available to be used as services
+#    # this creates a service per class whose id is the fully-qualified class name
+#    App\:
+#        resource: '../src/*'
+#        exclude: '../src/{Entities,Entity,Migrations,Tests,Kernel.php}'
+```

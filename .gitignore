@@ -43,3 +43,6 @@
 /vendor/
 /var/qa
 /cache/
+
+# PHPStorm
+.idea

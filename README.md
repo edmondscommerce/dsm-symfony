@@ -55,3 +55,4 @@ that reference your project code. For example:
 #        resource: '../src/*'
 #        exclude: '../src/{Entities,Entity,Migrations,Tests,Kernel.php}'
 ```
+This should only be needed when regenerating entities that are referenced elsewhere in the code. Once the generation is complete then these lines should be uncommented again. See [Issue 3](https://github.com/edmondscommerce/dsm-api-platform/issues/3) for more details

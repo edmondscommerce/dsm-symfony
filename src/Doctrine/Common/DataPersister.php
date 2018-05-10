@@ -94,7 +94,7 @@ class DataPersister implements DataPersisterInterface
     private function getObjectClass($object): string
     {
         if (class_exists(ClassUtils::class)) {
-            return ClassUtils::getRealClass($object);
+            return ClassUtils::getClass($object);
         }
 
         return \get_class($object);

@@ -1,13 +1,13 @@
 {
-    "name": "edmondscommerce/dsm-api-platform",
-    "description": "A symfony bundle for DSM and API Platform",
+    "name": "edmondscommerce/dsm-symfony",
+    "description": "A symfony bundle for Doctrine Static Meta (edmondscommerce/doctrine-static-meta) and Symfony",
     "type": "library",
     "require": {
-        "edmondscommerce/doctrine-static-meta": "dev-master",
+        "edmondscommerce/doctrine-static-meta": "dev-master@dev",
         "api-platform/core": "^2.2"
     },
     "require-dev": {
-        "edmondscommerce/phpqa": "dev-master"
+        "edmondscommerce/phpqa": "dev-master@dev"
     },
     "authors": [
         {

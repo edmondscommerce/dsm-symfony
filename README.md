@@ -1,7 +1,10 @@
-# dsm-api-platform
+# dsm-symfony
 
 ## By [Edmonds Commerce](https://www.edmondscommerce.co.uk)
 A symfony bundle that facilitates using [Doctrine Static Meta](https://github.com/edmondscommerce/doctrine-static-meta) with [API Platform](https://api-platform.com/)
+
+## _THIS IS NOT PRODUCTION READY_
+
 
 ### Install
 
@@ -39,7 +42,7 @@ You should now see the DSM commands when you run `./bin/console`:
   dsm:generate:field                      Generate a field
   dsm:generate:relations                  Generate relations traits for your entities. Optionally filter down the list of entities to generate relationship traits for
   dsm:set:field                           Set an Entity as having a Field
-  dsm:set:relation 
+  dsm:set:relation
 # ...
 ```
 

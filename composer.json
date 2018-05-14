@@ -16,7 +16,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "EdmondsCommerce\\DsmBundle\\": ["src/"]
+            "EdmondsCommerce\\DsmBundle\\": ["DsmBundle/"]
         }
     },
     "config": {

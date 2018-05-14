@@ -5,13 +5,13 @@
  * @author   Ross Mitchell <ross@edmondscommerce.co.uk>
  */
 
-namespace EdmondsCommerce\DsmApiPlatformBundle;
+namespace EdmondsCommerce\DsmBundle;
 
-use EdmondsCommerce\DsmApiPlatformBundle\DependencyInjection\Compiler\DataPersisterPass;
+use EdmondsCommerce\DsmBundle\DependencyInjection\Compiler\DataPersisterPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class DsmApiPlatformBundle extends Bundle
+class DsmBundle extends Bundle
 {
     /**
      * @inheritdoc

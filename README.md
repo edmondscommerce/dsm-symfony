@@ -13,12 +13,12 @@ First you need to add the following to your `composer.json`:
 ```json
 {
     "require": {
-        "edmondscommerce/dsm-api-platform": "dev-master"
+        "edmondscommerce/dsm-symfony": "dev-master"
     },
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/edmondscommerce/dsm-api-platform.git"
+            "url": "https://github.com/edmondscommerce/dsm-symfony"
         }
     ]
 }

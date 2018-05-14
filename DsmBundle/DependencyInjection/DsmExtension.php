@@ -5,14 +5,14 @@
  * @author   Ross Mitchell <ross@edmondscommerce.co.uk>
  */
 
-namespace EdmondsCommerce\DsmApiPlatformBundle\DependencyInjection;
+namespace EdmondsCommerce\DsmBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
-class DsmApiPlatformExtension extends Extension
+class DsmExtension extends Extension
 {
 
     /**

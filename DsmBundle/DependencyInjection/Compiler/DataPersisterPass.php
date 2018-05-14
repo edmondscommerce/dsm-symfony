@@ -5,9 +5,9 @@
  * @author   Ross Mitchell <ross@edmondscommerce.co.uk>
  */
 
-namespace EdmondsCommerce\DsmApiPlatformBundle\DependencyInjection\Compiler;
+namespace EdmondsCommerce\DsmBundle\DependencyInjection\Compiler;
 
-use EdmondsCommerce\DsmApiPlatformBundle\Doctrine\Common\DataPersister;
+use EdmondsCommerce\DsmBundle\Doctrine\Common\DataPersister;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

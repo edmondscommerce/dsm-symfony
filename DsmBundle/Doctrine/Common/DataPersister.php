@@ -5,7 +5,7 @@
  * @author   Ross Mitchell <ross@edmondscommerce.co.uk>
  */
 
-namespace EdmondsCommerce\DsmApiPlatformBundle\Doctrine\Common;
+namespace EdmondsCommerce\DsmBundle\Doctrine\Common;
 
 use ApiPlatform\Core\DataPersister\DataPersisterInterface;
 use Doctrine\Common\Persistence\ManagerRegistry;

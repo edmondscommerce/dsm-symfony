@@ -8,27 +8,17 @@ A symfony bundle that facilitates using [Doctrine Static Meta](https://github.co
 
 ### Install
 
-First you need to add the following to your `composer.json`:
+Run:
 
-```json
-{
-    "require": {
-        "edmondscommerce/dsm-symfony": "dev-master"
-    },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/edmondscommerce/dsm-symfony"
-        }
-    ]
-}
+```bash
+composer require edmondscommerce/dsm-symfony dev-master;
 ```
 
 Then you need to register the bundle by adding the following to `config/bundles.php`:
 
 ```php
 return [
-    EdmondsCommerce\DsmApiPlatformBundle\DsmApiPlatformBundle::class => ['all' => true]
+    EdmondsCommerce\DsmBundle\DsmBundle::class => ['all' => true]
 ];
 ```
 

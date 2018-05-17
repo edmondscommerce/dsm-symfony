@@ -29,7 +29,9 @@ class DataPersisterPass implements CompilerPassInterface
      */
     private function replaceDataPersisterWithOurOwn(ContainerBuilder $container)
     {
-        $definition = $container->findDefinition('api_platform.doctrine.orm.data_persister');
-        $definition->setClass(DataPersister::class);
+        if ($container->hasDefinition('api_platform.doctrine.orm.data_persister')) {
+            $definition = $container->findDefinition('api_platform.doctrine.orm.data_persister');
+            $definition->setClass(DataPersister::class);
+        }
     }
 }

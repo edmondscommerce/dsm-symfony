@@ -20,17 +20,6 @@ class DsmBundle extends Bundle
      */
     public function build(ContainerBuilder $container): void
     {
-        $this->replacePersister($container);
-    }
-
-    /**
-     * Registers our compiler pass class to switch out the Data Persister with our own
-     *
-     * @param ContainerBuilder $container
-     */
-    private function replacePersister(ContainerBuilder $container): void
-    {
-        parent::build($container);
-        $container->addCompilerPass(new DataPersisterPass());
+        return;
     }
 }

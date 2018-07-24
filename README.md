@@ -1,7 +1,7 @@
 # dsm-symfony
 
 ## By [Edmonds Commerce](https://www.edmondscommerce.co.uk)
-A symfony bundle that facilitates using [Doctrine Static Meta](https://github.com/edmondscommerce/doctrine-static-meta) with [API Platform](https://api-platform.com/)
+A symfony bundle that facilitates using [Doctrine Static Meta](https://github.com/edmondscommerce/doctrine-static-meta) 
 
 ## _THIS IS NOT PRODUCTION READY_
 
@@ -59,3 +59,7 @@ that reference your project code. For example:
 #        exclude: '../src/{Entities,Entity,Migrations,Tests,Kernel.php}'
 ```
 This should only be needed when regenerating entities that are referenced elsewhere in the code. Once the generation is complete then these lines should be uncommented again. See [Issue 3](https://github.com/edmondscommerce/dsm-api-platform/issues/3) for more details
+
+### Configuration
+
+This will add the Symfony doctrine configuration to DSM. This is handled in the [Container](./DsmBundle/DependencyInjection/Container.php) file where we remove the DMS Entity Manager Factory and replace it with our [own](./DsmBundle/Doctrine/Common/EntityManagerFactory.php)

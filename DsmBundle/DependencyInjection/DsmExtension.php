@@ -31,5 +31,11 @@ class DsmExtension extends Extension
             new FileLocator(__DIR__ . '/../Resources/config')
         );
         $loader->load('services.xml');
+        $this->addDsmServices($container);
+    }
+
+    private function addDsmServices(ContainerBuilder $container)
+    {
+        (new Container())->addConfiguration($container, $_SERVER);
     }
 }

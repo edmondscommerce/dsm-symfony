@@ -3,7 +3,8 @@
     "description": "A symfony bundle for Doctrine Static Meta (edmondscommerce/doctrine-static-meta) and Symfony",
     "type": "library",
     "require": {
-        "edmondscommerce/doctrine-static-meta": "^2.3.4"
+        "edmondscommerce/doctrine-static-meta": "^2.3.6",
+        "dittto/doctrine-entity-factories": "^2.0.0"
     },
     "require-dev": {
         "edmondscommerce/phpqa": "dev-master@dev"
@@ -16,10 +17,18 @@
     ],
     "autoload": {
         "psr-4": {
-            "EdmondsCommerce\\DsmBundle\\": ["DsmBundle/"]
+            "EdmondsCommerce\\DsmBundle\\": [
+                "DsmBundle/"
+            ]
         }
     },
     "config": {
         "bin-dir": "bin"
-    }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:rossmitchell/doctrine-entity-factories.git"
+        }
+    ]
 }

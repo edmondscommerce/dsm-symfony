@@ -13,6 +13,7 @@ use EdmondsCommerce\DoctrineStaticMeta\Config;
 use EdmondsCommerce\DoctrineStaticMeta\Container as DsmContainer;
 use EdmondsCommerce\DsmBundle\Doctrine\Common\EntityManagerFactory;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 
 class Container extends DsmContainer
@@ -23,16 +24,31 @@ class Container extends DsmContainer
         $container->autowire(EntityManagerFactory::class)
                   ->addArgument($defaultConfiguration);
 
-        $container->getDefinition(EntityManager::class)
-                  ->addArgument(new Reference(Config::class))
-                  ->setFactory(
-                      [
-                          new Reference(EntityManagerFactory::class),
-                          'getEntityManager',
-                      ]
-                  );
+        $entityManager = $this->getEntityManagerDefinition($container);
+        $entityManager
+            ->addArgument(new Reference(Config::class))
+            ->setFactory(
+                [
+                    new Reference(EntityManagerFactory::class),
+                    'getEntityManager',
+                ]
+            );
+        $this->setAlias($container);
+    }
 
+    private function getEntityManagerDefinition(ContainerBuilder $container): Definition
+    {
+        if ($container->has(EntityManagerInterface::class) === true) {
+            return $container->getDefinition(EntityManagerInterface::class);
+        }
 
-        $container->setAlias(EntityManagerInterface::class, EntityManager::class)->setPublic(true);
+        return $container->getDefinition(EntityManager::class);
+    }
+
+    private function setAlias(ContainerBuilder $container): void
+    {
+        if ($container->has(EntityManagerInterface::class) === false) {
+            $container->setAlias(EntityManagerInterface::class, EntityManager::class)->setPublic(true);
+        }
     }
 }

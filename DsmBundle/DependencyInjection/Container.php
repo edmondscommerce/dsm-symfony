@@ -18,7 +18,7 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class Container extends DsmContainer
 {
-    public function autoWireEntityManager(ContainerBuilder $container): void
+    public function defineEntityManager(ContainerBuilder $container): void
     {
         $defaultConfiguration = new Reference('doctrine.orm.default_configuration');
         $container->autowire(EntityManagerFactory::class)

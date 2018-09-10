@@ -21,8 +21,10 @@ class Container extends DsmContainer
     public function defineEntityManager(ContainerBuilder $container): void
     {
         $defaultConfiguration = new Reference('doctrine.orm.default_configuration');
+        $dbalConnection = new Reference('doctrine.dbal.default_connection');
         $container->autowire(EntityManagerFactory::class)
-                  ->addArgument($defaultConfiguration);
+                  ->addArgument($defaultConfiguration)
+                  ->addArgument($dbalConnection);
 
         $entityManager = $this->getEntityManagerDefinition($container);
         $entityManager

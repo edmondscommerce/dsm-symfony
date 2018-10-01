@@ -10,8 +10,11 @@ namespace EdmondsCommerce\DsmBundle\Doctrine\Common;
 use Doctrine\Common\Cache\Cache;
 use Doctrine\DBAL\Connection;
 use Doctrine\ORM\Configuration;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use EdmondsCommerce\DoctrineStaticMeta\ConfigInterface;
 use EdmondsCommerce\DoctrineStaticMeta\Entity\Factory\EntityFactory;
+use EdmondsCommerce\DoctrineStaticMeta\EntityManager\Decorator\EntityFactoryManagerDecorator;
 use EdmondsCommerce\DoctrineStaticMeta\EntityManager\EntityManagerFactory as DsmEntityManagerFactory;
 
 class EntityManagerFactory extends DsmEntityManagerFactory
@@ -45,17 +48,20 @@ class EntityManagerFactory extends DsmEntityManagerFactory
     }
 
     /**
-     * @inheritDoc
+     * We already have a fully configured DBAL connection from the config folder. It makes sense to use that, plus it
+     * allows other services, such as the web profiler to hook into it
+     *
+     * @param array         $dbParams
+     * @param Configuration $doctrineConfig
+     *
+     * @return EntityManagerInterface
+     * @throws \Doctrine\ORM\ORMException
      */
-    public function getDbConnectionInfo(ConfigInterface $config): array
+    public function createEntityManager(array $dbParams, Configuration $doctrineConfig): EntityManagerInterface
     {
-        $dbConnection                  = parent::getDbConnectionInfo($config);
-        $params = $this->connection->getParams();
-        if(isset($params['driverOptions'])) {
-            $dbConnection['driverOptions'] = $params['driverOptions'];
-        }
+        $entityManager = EntityManager::create($this->connection, $doctrineConfig);
 
-        return $dbConnection;
+        return new EntityFactoryManagerDecorator($entityManager);
     }
 
     public function getDoctrineConfig(ConfigInterface $config): Configuration

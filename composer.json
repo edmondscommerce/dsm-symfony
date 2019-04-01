@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "edmondscommerce/doctrine-static-meta": "dev-master@dev",
-        "edmondscommerce/typesafe-functions": "dev-master@dev"
+        "edmondscommerce/typesafe-functions": "^0.1"
     },
     "require-dev": {
         "edmondscommerce/phpqa": "^1.0.0"

@@ -3,8 +3,8 @@
     "description": "A symfony bundle for Doctrine Static Meta (edmondscommerce/doctrine-static-meta) and Symfony",
     "type": "library",
     "require": {
-        "edmondscommerce/doctrine-static-meta": "^2.3.6|^3.1.0",
-        "edmondscommerce/typesafe-functions": "dev-master@dev"
+        "edmondscommerce/doctrine-static-meta": "^6.0",
+        "edmondscommerce/typesafe-functions": "^0.1"
     },
     "require-dev": {
         "edmondscommerce/phpqa": "^1.0.0"
@@ -24,5 +24,10 @@
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-DSM-6": "0.2.0.x-dev"
+        }
     }
 }

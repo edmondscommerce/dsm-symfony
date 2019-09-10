@@ -4,10 +4,10 @@
     "type": "library",
     "require": {
         "edmondscommerce/doctrine-static-meta": "^6.0",
-        "edmondscommerce/typesafe-functions": "^0.2"
+        "edmondscommerce/typesafe-functions": "^0.1"
     },
     "require-dev": {
-        "edmondscommerce/phpqa": "^1.0"
+        "edmondscommerce/phpqa": "^1.0.0"
     },
     "authors": [
         {
